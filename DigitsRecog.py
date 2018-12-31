@@ -34,3 +34,38 @@ with tflow.name_scope("Wxval_bias") as scope:
 w_h = tflow.histogram_summary("Weights", W)
 bias_h = tflow.histogram_summary("Biases", bias)
 
+# init variables
+
+init = tflow.initialize_all_variables()
+
+# launch graph
+
+with tflow.Session() as session:
+    session.run(init)
+
+    # training cycle
+
+    for iteration in range(training_iter):
+        average_cost = 0
+        batch_total = int(mnist.train.next_batch(size_batch))
+
+        # loooping over all batches
+
+        for val in range (batch_total):
+
+            batch_xs, batch_ys = mnist.train.next_batch(size_batch)
+
+            session.run(optimizer, feed_dict = {xval: batch_xs, yval: batch_ys})/batch_total
+
+            
+
+
+
+
+
+
+
+
+
+    
+
