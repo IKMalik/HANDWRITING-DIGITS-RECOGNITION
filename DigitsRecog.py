@@ -1,3 +1,6 @@
+# NOTE THIS IS A SMALLER TEST BUILD OF THE LARGER PROJECT.
+
+
 # Import MNIST data and tensorflow
 
 import input_data
