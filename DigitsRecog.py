@@ -4,6 +4,7 @@
 # Import MNIST data and tensorflow
 
 import input_data
+import numpy
 import tensorflow as tflow
 
 mnist = inpute_data.read_data_sets("/tmp/data", one_hot=True)
@@ -17,7 +18,7 @@ display_step = 2
 
 # Input for graph in tensorflow
 
-xval = tflow.placeholder("float", [None, 784]) # mnist data image of shape is 28*2 = 784
+xval = tflow.placeholder("float", [None, 784]) # mnist data image of shape is 28^2 = 784
 yval = tflow.placeholder("float", [None, 10]) # 10 cases as digits can range 0-9
 
 # model creation
